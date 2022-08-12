@@ -1,0 +1,41 @@
+// https://www.youtube.com/watch?v=BBWyXo-3JGQ
+
+Android activity contains many views
+AppCompActivity gives behaviour of real activity
+
+VAR & CONST:
+
+var var_name : DataType // VAR
+val val_name : DataType // CONST
+
+
+RecyclerView Adapter: Class in which we define the layout we want to use for 
+recycler view items
+
+Need to define a list with data that populates the items of recycler view along
+with logic of how to populate it with data
+
+Create a new kotlin file in same directory as main
+
+Create "data class Todo" whose primary purpose is to hold data
+
+Todo.kt:
+package com.example.todolist
+
+data class Todo(
+	val title: String,
+	val isChecked: Boolean = false,
+} // will pass bunch of todo items to ViewAdapter
+
+TodoAdapter.kt
+package com.example.todolist
+
+class TodoAdapter{
+	 private val todos: MutableList <Todo>
+} {
+	class TodoViewHolder(itemView:view) : RecyclerView.ViewHolder(itemView)
+
+	// CTRL + i ==> ENTER ==> CTRL + a ==> ENTER
+
+	// Use layout inflater to get reference to specific view
+		
