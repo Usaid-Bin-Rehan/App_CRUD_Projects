@@ -3,10 +3,107 @@
 Android activity contains many views
 AppCompActivity gives behaviour of real activity
 
+
 VAR & CONST:
 
 var var_name : DataType // VAR
 val val_name : DataType // CONST
+
+
+FUNCTIONS:
+
+fun myFunction(x: Int): Int // Defined return-type
+fun myFunction(x: Int, y: Int) = x + y // Auto return-type
+
+
+RANGE:
+
+1..5
+
+
+ARRAYS:
+
+val fruits = arrayOf <String> ("Apple", "Mango", "Banana", "Orange") // Data-Type is optional
+println( fruits.get(0) )
+fruits.set(3, "Guava")
+println(fruits.size)
+
+for(item in fruits){ println(item) }
+
+val result = fruits.drop(2) // drops first two elements.
+for(item in result){ println( item ) }
+
+val distinct = fruits.distinct()
+for(item in distinct){ println(item) }
+
+if("Mango" in fruits){ println("Exists") }
+else{ println("NOT Exist") }
+
+val fruits = arrayOf <String> ()
+println( fruits.isEmpty() )
+
+
+STRING TEMPLATES:
+
+var Name = "Doe"
+println("My name is $Name")
+
+var txt = "Please locate where 'locate' occurs!"
+println(txt.indexOf("locate"))  // Outputs 7
+
+
+WHEN:
+
+val result = when (day) {
+     1 -> "Monday"
+     2 -> "Tuesday"
+     3 -> "Wednesday"
+     4 -> "Thursday"
+     5 -> "Friday"
+     6 -> "Saturday"
+     7 -> "Sunday"
+     else -> "Invalid day."
+   }
+
+
+COLLECTIONS:
+
+List	listOf() | listOf<T>()
+Map	mapOf()
+Set	setOf()
+
+List	ArrayList<T>() | arrayListOf() | mutableListOf()
+Map	HashMap | hashMapOf() | mutableMapOf()
+Set	hashSetOf()
+
+List is ordered
+Set is unordered
+
+
+COLLECTION METHODS:
+
+val theList = listOf("one", "two", "three", "four")
+val itr = theList.listIterator() 
+while (itr.hasNext()) { println( itr.next() ) }
+
+val resultList = theList.slice(2..4)
+
+val theList = listOf(10, 20, 30, 31, 40, 50, -1, 0)
+val resultList = theList.filter{ it > 30 }
+
+val resultList = theList.groupBy{ it % 3 } // [31, 40, 50, -1, 0]
+
+val resultList = theList.map{ it / 3 } // [3, 4, 10, 10, 13, 3, -1, 0]
+
+val resultList = theList.chunked(3) // [[10, 12, 30], [31, 40, 9], [-3, 0]]
+
+
+CONSTRUCTOR:
+
+class ClassName(var brand: String, var model: String, var year: Int)
+
+
+
 
 
 RecyclerView Adapter: Class in which we define the layout we want to use for 
@@ -25,7 +122,7 @@ package com.example.todolist
 data class Todo(
 	val title: String,
 	val isChecked: Boolean = false,
-} // will pass bunch of todo items to ViewAdapter
+) // will pass bunch of todo items to ViewAdapter
 
 TodoAdapter.kt
 package com.example.todolist
@@ -38,4 +135,5 @@ class TodoAdapter{
 	// CTRL + i ==> ENTER ==> CTRL + a ==> ENTER
 
 	// Use layout inflater to get reference to specific view
-		
+	
+	
